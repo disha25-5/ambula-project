@@ -1,0 +1,656 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #1ABC9C; /* Teal/Cyan */
+    --bg-color: #E0F7FA; /* Light Teal/Cyan Background */
+    --primary-light: #E0F7FA; /* Original light color */
+    --upcoming-card-bg: #B2EBF2; /* Distinct background for upcoming card */
+
+    --secondary-color: #3498DB; /* Blue for icons/accents */
+    --icon-bg-blue: #E3F2FD;    /* Light blue background for icon wrappers */
+    --icon-color-blue: #2979FF; /* Specific blue for icons in image */
+
+    --accent-color: #F16C60; /* Coral/Red for SOS */
+    --offer-color: #27AE60; /* Green for offer */
+
+    --text-color: #34495E; /* Dark Blue/Grey Text */
+    --light-text-color: #7F8C8D; /* Lighter Grey Text */
+    --card-bg: #ffffff; /* Ensure cards are white */
+    --border-color: #e0e4e8;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+    --font-family: 'Poppins', sans-serif; /* Using Poppins */
+    --border-radius-m: 12px;
+    --border-radius-l: 16px;
+    --border-radius-s: 8px;
+
+    --button-blue-bg: #2979FF; /* Blue for the Learn More button */
+    --button-blue-hover-bg: #1C6EE5;
+    --footer-bg-start: #F0F8FF; /* Lighter blue/white for top of footer */
+    --footer-bg-end: #E0F7FA; /* Match body bg at bottom */
+}
+
+/* Reset and Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* General Styles */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+h1 { font-size: 1.5rem; margin-bottom: 0.1em;}
+h2 { font-size: 1.2rem; margin-bottom: 0.8em;}
+h3 { font-size: 1.1rem; margin-bottom: 0.5em;}
+/* Style for the ABHA Services subtitle */
+h3.section-subtitle {
+    font-size: 1.1rem; /* Match other section titles */
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 25px; /* Increased space above */
+    margin-bottom: 15px;
+    padding: 0 5px;
+    text-align: left; /* <<<< Align to the left */
+}
+
+
+p {
+    margin-bottom: 0.5em;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-l);
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 22px; /* Slightly taller button */
+    border-radius: 25px; /* More rounded */
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); /* Subtle shadow */
+}
+.btn-primary:hover {
+    background-color: #16a085;
+    transform: scale(1.03);
+}
+.btn-secondary { /* Adjusted for ABHA slide */
+    background-color: var(--icon-bg-blue);
+    color: var(--icon-color-blue);
+    border: 1px solid var(--icon-color-blue);
+    padding: 8px 18px; /* Adjusted padding */
+    font-size: 0.85rem;
+}
+.btn-secondary:hover {
+    background-color: #d1e6ff;
+    transform: scale(1.03);
+}
+/* Specific Blue Button */
+.btn-blue {
+    background-color: var(--button-blue-bg);
+    color: white;
+    padding: 10px 25px; /* Match image padding */
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(41, 121, 255, 0.3);
+}
+.btn-blue:hover {
+    background-color: var(--button-blue-hover-bg);
+    transform: scale(1.03);
+}
+
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px 15px 15px;
+    background-color: var(--bg-color); /* Match body background */
+}
+.greeting h1 { color: var(--text-color); }
+.greeting p { font-size: 0.9rem; color: var(--light-text-color); margin-bottom: 0;}
+.sos-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-m); /* More rounded */
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(231, 76, 60, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.sos-button:hover { background-color: #c0392b; transform: translateY(-2px); }
+
+/* Main Content */
+.main-content { padding: 0 15px 80px 15px; flex-grow: 1; max-width: 1200px; width: 100%; margin: 0 auto; }
+
+/* Section Header */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 0 5px; }
+.section-header h2 { margin-bottom: 0; font-size: 1.1rem; /* Slightly smaller */}
+
+/* Appointments Section */
+.appointments-section { margin-bottom: 5px; /* Reduced bottom margin */ }
+.appointments-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+.appointment-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-l);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adjust if needed, center might work better */
+    align-items: center; /* Default to center */
+    text-align: center;
+    color: var(--text-color);
+    min-height: 120px; /* Base min-height */
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Keep relative for potential pseudo-elements if needed */
+}
+.appointment-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); }
+.appointment-card .card-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    /* align-self: flex-start; REMOVED - Let parent center it */
+    margin-bottom: 10px; /* Adjusted spacing */
+    width: 100%; /* Ensure it takes full width for centering text */
+    text-align: center; /* Explicitly center text */
+}
+.appointment-card .card-text { font-weight: 500; font-size: 0.85rem; color: var(--text-color); margin-top: 10px; margin-bottom: 0; }
+
+/* Icon Wrappers & Icons (General Blue Style) */
+.icon-wrapper {
+    width: 50px; /* Adjusted size */
+    height: 50px;
+    border-radius: var(--border-radius-m); /* Rounded square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/* Blue background style for icons */
+.icon-wrapper.blue-icon-bg {
+    background-color: var(--icon-bg-blue);
+}
+/* Blue icon color */
+.card-icon.blue-icon, .blue-icon { /* Applied to i elements */
+    font-size: 1.6rem;
+    color: var(--icon-color-blue);
+}
+
+/* ========================================== */
+/* === Upcoming Appointment Card - REVISED Layout & Color === */
+/* ========================================== */
+.appointment-card.upcoming {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background-color: var(--upcoming-card-bg); /* <<<< Use the distinct color */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center children horizontally */
+    min-height: 180px;
+    padding: 20px 15px; /* Adjusted padding */
+}
+
+/* Title remains centered by parent align-items */
+.appointment-card.upcoming .card-title {
+     color: var(--text-color);
+     font-weight: 500;
+     margin-bottom: 15px; /* Increased space below title */
+     align-self: auto; /* Ensure it follows parent's centering */
+}
+
+/* Details container (date/time) */
+.appointment-details {
+    margin-top: 0; /* Reset margin */
+    position: static; /* No longer needs relative/z-index */
+    text-align: center; /* Center badge and time */
+    margin-bottom: 15px; /* Add space below date/time, above icon */
+}
+
+.appointment-details .date-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 10px; /* Adjusted padding */
+    border-radius: var(--border-radius-s);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block; /* Keep inline-block */
+    margin-bottom: 8px; /* Spacing */
+}
+
+.appointment-details .time {
+    display: block; /* Keep block */
+    font-size: 1.3rem; /* Adjusted base size */
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+/* Large Icon */
+.appointment-card.upcoming .large-icon {
+    position: static; /* Part of normal flow */
+    font-size: 3rem; /* Adjusted base size */
+    color: var(--primary-color);
+    opacity: 0.6; /* Adjusted opacity */
+    margin-top: auto; /* Push icon towards bottom if space allows */
+    padding-bottom: 5px; /* Add small padding at the very bottom */
+}
+/* ========================================== */
+/* === End Upcoming Appointment Revision === */
+/* ========================================== */
+
+
+/* Specific Card Styling: Past Appointment */
+.appointment-card.past {
+    justify-content: center;
+    background-color: var(--card-bg); /* White background */
+}
+.appointment-card.past .card-title { margin-bottom: 10px; align-self: center; color: var(--light-text-color); }
+.appointment-card.past .icon-wrapper.small-icon {
+     width: 40px; /* Smaller icon */
+     height: 40px;
+     border-radius: 50%; /* Circular */
+     margin-top: auto;
+     margin-bottom: 5px;
+}
+.appointment-card.past .card-icon { font-size: 1.1rem; } /* Smaller icon font */
+
+/* Specific Card Styling: Book & Records */
+.appointment-card.book, .appointment-card.records {
+    justify-content: center; /* Center vertically */
+}
+.appointment-card.book .icon-wrapper,
+.appointment-card.records .icon-wrapper {
+     width: 45px; /* Smaller wrappers */
+     height: 45px;
+     margin-bottom: 8px;
+}
+.appointment-card.book .card-icon,
+.appointment-card.records .card-icon {
+    font-size: 1.4rem; /* Smaller icons */
+}
+
+
+/* Our Services Section */
+.our-services-section { padding: 20px; margin-top: 10px; }
+.our-services-section h2 { text-align: left; margin-bottom: 20px; font-size: 1.1rem; } /* Align left */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; justify-items: center; }
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    padding: 10px 5px;
+    border-radius: var(--border-radius-m);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    width: 100%;
+    background-color: var(--card-bg); /* Give items white background */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.04); /* Add slight shadow to items */
+    min-height: 100px; /* Ensure consistent height */
+    justify-content: center;
+}
+.service-item .icon-wrapper.service-icon {
+    width: 45px; /* Match appointment card style */
+    height: 45px;
+    margin-bottom: 8px;
+}
+.service-item .icon-wrapper i { font-size: 1.4rem; } /* Match appointment card style */
+.service-item p { font-size: 0.8rem; font-weight: 500; color: var(--text-color); line-height: 1.3; margin-bottom: 0; }
+.service-item:hover { transform: scale(1.05); background-color: #f8f8f8; }
+.service-item.placeholder { background-color: transparent; box-shadow: none; pointer-events: none; }
+.offer-badge {
+    position: absolute;
+    top: 5px; /* Adjusted position */
+    right: 5px;
+    background-color: var(--offer-color);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--border-radius-s);
+    /* transform: rotate(10deg); Remove rotation if not desired */
+    z-index: 1;
+}
+
+/* Carousel / Info Section - Adjusted for current HTML */
+.carousel-container { position: relative; margin: 20px 0; padding: 0; }
+.carousel-wrapper { overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.carousel-slide.info-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 20px 15px; /* Adjust padding */
+    transform: none !important;
+    box-shadow: 0 5px 15px var(--shadow-color) !important;
+    background-color: var(--card-bg); /* Ensure white background */
+}
+.carousel-slide.info-slide:hover { transform: none !important; box-shadow: 0 5px 15px var(--shadow-color) !important; }
+
+/* Styles for the specific ABHA Info Slide Headers */
+.info-slide .slide-header {
+    margin-bottom: 15px;
+    text-align: center; /* Center the H3 or Icon+H3 */
+    display: flex; /* Use flex for icon+text */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Space between icon and text if icon present */
+}
+.info-slide .slide-header i { /* Style for icons in header */
+    font-size: 1.3rem;
+    color: var(--primary-color); /* Teal color for icons */
+}
+.info-slide .slide-header h3 {
+     margin-bottom: 0; /* Remove bottom margin from H3 */
+     font-size: 1.1rem; /* Slightly smaller H3 when icon present, or keep 1.2rem if no icon */
+     color: var(--text-color);
+}
+
+/* General Slide Content Styling */
+.slide-content {
+    display: flex;
+    flex-direction: column; /* Stack image/text vertically */
+    align-items: center; /* Center items */
+    gap: 15px;
+}
+
+/* Target the specific image directly inside .slide-content */
+.slide-content > img.slide-image {
+    display: block; /* Ensure it's block for centering */
+    max-width: 180px; /* Control image size */
+    height: auto;
+    margin: 0 auto 10px auto; /* Center image and add space below */
+    object-fit: contain; /* Prevent image stretching */
+}
+
+.info-slide .slide-text {
+    text-align: center; /* Center text */
+}
+.info-slide .slide-text p {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 20px; /* More space before button */
+    max-width: 300px; /* Prevent text from becoming too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Carousel Navigation */
+.carousel-nav { text-align: center; margin-top: 15px; }
+.carousel-dot { display: inline-block; width: 8px; height: 8px; background-color: #ccc; border-radius: 50%; margin: 0 4px; cursor: pointer; transition: background-color 0.3s ease, width 0.3s ease; }
+.carousel-dot.active { background-color: var(--primary-color); width: 16px; border-radius: 4px; }
+.carousel-button { display: none; } /* Hide arrows by default */
+
+/* Footer - Adjusted for current HTML */
+.app-footer {
+    text-align: center;
+    background: linear-gradient(to bottom, var(--footer-bg-start), var(--footer-bg-end));
+    padding: 20px 15px 80px 15px; /* Added top padding back */
+    border-top: none;
+    margin-top: 0; /* Reset margin top */
+    position: relative;
+    z-index: 1;
+}
+
+/* Target the image directly inside .approval-section */
+.approval-section > img {
+    display: block;
+    max-width: 280px; /* Adjust max width as needed */
+    height: auto;
+    margin: 0 auto 25px auto; /* Center and add space below */
+    object-fit: contain; /* Prevent distortion */
+}
+
+.approval-section {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.approval-section span { /* "APPROVED BY" text */
+    display: block; /* Make it a block to center easily */
+    font-size: 0.75rem;
+    color: var(--light-text-color);
+    font-weight: 500;
+    margin-bottom: 10px; /* Space below text */
+}
+.approval-logos {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust gap between logos */
+    flex-wrap: wrap;
+}
+.approval-logos img {
+    height: 30px; /* Adjust logo height */
+    width: auto; /* Let width adjust based on height */
+    max-width: 120px; /* Prevent logos like NHA from becoming too wide */
+    opacity: 0.9;
+    object-fit: contain; /* Prevent distortion */
+}
+/* Style specifically for the first logo if needed (using class 'photo') */
+.approval-logos img.photo {
+    /* Add specific styles if different from other logos */
+     height: 32px;
+     max-width: 130px; /* Adjust max-width for NHA logo */
+}
+.approval-logos img:last-child { /* Specific style for the round logo if needed */
+    height: 35px; /* Slightly larger if it's round */
+    max-width: 40px; /* Limit width for round logo */
+}
+.privacy-info {
+    font-size: 0.8rem; /* Slightly larger text */
+    color: var(--light-text-color);
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding: 0 10px; /* Add padding so text doesn't touch edges */
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    z-index: 1000;
+    border-top-left-radius: var(--border-radius-l);
+    border-top-right-radius: var(--border-radius-l);
+}
+.nav-item { display: flex; flex-direction: column; align-items: center; color: var(--light-text-color); font-size: 0.7rem; flex-grow: 1; padding: 5px 0; }
+.nav-item i { font-size: 1.3rem; margin-bottom: 3px; }
+.nav-item.active { color: var(--primary-color); } /* Use primary teal for active */
+.nav-item.active span { font-weight: 600; }
+.nav-item:hover { color: var(--primary-color); }
+
+/* --- Responsive Design --- */
+
+/* Target very small screens */
+@media (max-width: 380px) {
+    .appointment-card.upcoming {
+        min-height: 170px;
+        padding: 15px 10px;
+    }
+    .appointment-details .date-badge {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+    .appointment-details .time {
+        font-size: 1.15rem;
+    }
+    .appointment-card.upcoming .large-icon {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        padding-bottom: 0;
+    }
+
+    /* Adjust footer illustration size on very small screens */
+     .approval-section > img {
+        max-width: 240px;
+     }
+     .slide-content > img.slide-image {
+         max-width: 150px; /* Smaller carousel image */
+     }
+}
+
+
+/* Medium screens (Tablets) */
+@media (min-width: 600px) {
+     h1 { font-size: 1.7rem; }
+     h2 { font-size: 1.4rem; }
+     h3.section-subtitle { font-size: 1.1rem; }
+     .main-content { padding: 0 30px 90px 30px; }
+     .app-header { padding: 25px 30px 20px 30px; }
+     .services-grid { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px;}
+
+     /* Upcoming appointment styles for tablet */
+     .appointment-card.upcoming {
+         min-height: 220px;
+         padding: 20px;
+     }
+      .appointment-details .date-badge { font-size: 0.85rem; padding: 4px 10px;}
+      .appointment-details .time { font-size: 1.6rem; }
+      .appointment-card.upcoming .large-icon { font-size: 3.5rem; margin-top: auto; padding-bottom: 10px;}
+
+     /* Carousel layout adjustment for Tablet */
+     .slide-content { /* Affects ABHA slide content */
+        flex-direction: row; /* Side-by-side layout */
+        align-items: center; /* Vertically center items in the row */
+        max-width: 90%;
+        margin: 0 auto;
+        gap: 20px; /* Add gap between image and text */
+    }
+     .slide-content > img.slide-image {
+         flex-basis: 40%; /* Give image ~40% width */
+         max-width: 160px; /* Limit image size */
+         margin: 0; /* Reset margin */
+     }
+     .info-slide .slide-text {
+         flex-basis: 60%; /* Give text ~60% width */
+         text-align: left; /* Align text left */
+         margin: 0;
+     }
+      .info-slide .slide-text p {
+         max-width: none; /* Remove max-width */
+     }
+
+    /* Footer illustration size */
+    .approval-section > img { max-width: 320px; }
+}
+
+/* Large screens (Desktops) */
+@media (min-width: 992px) {
+     body { padding-bottom: 0; }
+     .main-content { padding: 20px 20px 40px 20px; }
+     .app-header { padding: 30px 20px 25px 20px; }
+
+     /* Appointments Grid Desktop Layout */
+     .appointments-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; grid-template-rows: auto; }
+
+     /* Reset Upcoming Card Layout for Desktop */
+     .appointment-card.upcoming {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          min-height: 150px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+     }
+     .appointment-card.upcoming .card-title {
+         text-align: left;
+         margin-bottom: 0;
+         width: auto;
+         align-self: center;
+     }
+      .appointment-card.upcoming .appointment-details {
+          text-align: left;
+          margin-bottom: 0;
+          align-self: center;
+      }
+      .appointment-card.upcoming .large-icon {
+           font-size: 2.5rem;
+           margin-top: 0;
+           padding-bottom: 0;
+           margin-left: 15px;
+           align-self: center;
+     }
+
+     .appointment-card.past { grid-column: 2 / 3; }
+     .appointment-card.book { grid-column: 3 / 4; }
+     .appointment-card.records { grid-column: 4 / 5; }
+
+     /* Adjust ABHA Services title alignment on desktop */
+     h3.section-subtitle {
+        grid-column: auto; /* Reset grid column span */
+        text-align: left; /* Ensure it stays left */
+        /* Adjust margin if needed */
+     }
+
+     /* Services Grid Desktop Layout */
+     .services-grid { grid-template-columns: repeat(5, 1fr); }
+     .service-item.placeholder { display: none; }
+
+     /* Carousel Desktop Layout */
+     .slide-content { /* Further refinement for desktop */
+         max-width: 700px;
+         gap: 30px;
+     }
+     .slide-content > img.slide-image {
+        max-width: 200px; /* Allow slightly larger image */
+     }
+
+     /* Footer Desktop Layout */
+     .approval-section > img { max-width: 350px; margin-bottom: 30px;}
+     .approval-logos img { height: 35px; max-width: 150px; } /* Adjust NHA max width */
+     .approval-logos img.photo { height: 38px; max-width: 160px; } /* Adjust photo class height/width */
+     .approval-logos img:last-child { height: 40px; max-width: 45px; } /* Adjust round logo */
+     .privacy-info { font-size: 0.85rem; }
+
+     /* Bottom Nav Desktop Layout */
+     .bottom-nav { max-width: 1200px; left: 50%; transform: translateX(-50%); border-radius: 12px; bottom: 10px; width: 95%; }
+}

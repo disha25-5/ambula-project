@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embla - Your Health Summary</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="greeting">
+            <h1>Good evening, Divyanshi</h1> <!-- This will be updated by JS -->
+            <p>Here's your health summary today</p>
+        </div>
+        <button class="sos-button">SOS</button>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Doctor Appointments Section -->
+        <section class="appointments-section">
+            <div class="section-header">
+                <h2>Doctor Appointments</h2>
+                <a href="#" class="btn btn-primary book-now-btn">Book Now</a>
+            </div>
+            <div class="appointments-grid">
+                <!-- Upcoming Appointment -->
+                <a href="#" class="appointment-card upcoming">
+                    <p class="card-title">Upcoming</p>
+                    <div class="appointment-details">
+                        <span class="date-badge">May 02</span>
+                        <span class="time">10:00 AM</span>
+                    </div>
+                    <!-- Closest FA icon for the doctor symbol -->
+                    <i class="fas fa-user-doctor card-icon large-icon"></i>
+                </a>
+                <!-- Past Appointments -->
+                <a href="#" class="appointment-card past">
+                    <p class="card-title">Past</p>
+                     <div class="icon-wrapper small-icon blue-icon-bg">
+                        <!-- Simple clock icon is visually closer than fa-history -->
+                        <i class="fas fa-clock card-icon blue-icon"></i>
+                    </div>
+                </a>
+                <!-- Book Appointment -->
+                <a href="#" class="appointment-card book">
+                    <div class="icon-wrapper blue-icon-bg">
+                       <!-- Calendar icon seems right -->
+                       <i class="fas fa-calendar-check card-icon blue-icon"></i>
+                    </div>
+                    <p class="card-text">Book Appointment</p>
+                </a>
+                 <!-- My Health Records -->
+                 <a href="#" class="appointment-card records">
+                    <div class="icon-wrapper blue-icon-bg">
+                        <!-- Document/File icon -->
+                        <i class="fas fa-file-medical card-icon blue-icon"></i>
+                    </div>
+                    <p class="card-text">My Health Records</p>
+                </a>
+            </div>
+             <!-- ABHA Services Title (Now styled left-aligned) -->
+            <h3 class="section-subtitle">ABHA Services</h3>
+        </section>
+
+
+        <!-- Our Services Section -->
+        <section class="our-services-section card">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <a href="#" class="service-item">
+                    <div class="icon-wrapper service-icon blue-icon-bg">
+                        <!-- User icon for doctor -->
+                        <i class="fas fa-user-md blue-icon"></i>
+                    </div>
+                    <p>Ambulance Doctors</p>
+                </a>
+                <a href="#" class="service-item has-offer">
+                     <span class="offer-badge">UP TO 30% OFF</span>
+                    <div class="icon-wrapper service-icon blue-icon-bg">
+                        <!-- This is the hardest to match - using flask as placeholder -->
+                        <i class="fas fa-flask-vial blue-icon"></i>
+                    </div>
+                    <p>Book Lab Test</p>
+                </a>
+                 <a href="#" class="service-item">
+                    <div class="icon-wrapper service-icon blue-icon-bg">
+                         <!-- Building/Hospital icon for partners -->
+                         <i class="fas fa-hospital blue-icon"></i>
+                    </div>
+                    <p>Our Partners</p>
+                </a>
+                <a href="#" class="service-item">
+                    <div class="icon-wrapper service-icon blue-icon-bg">
+                         <!-- Droplet for blood glucose -->
+                         <i class="fas fa-droplet blue-icon"></i>
+                    </div>
+                    <p>Monitor Blood Glucose</p>
+                </a>
+                <a href="#" class="service-item">
+                    <div class="icon-wrapper service-icon blue-icon-bg">
+                        <!-- Heart + line icon -->
+                        <i class="fas fa-heart-pulse blue-icon"></i>
+                    </div>
+                    <p>Measure Heart Rate</p>
+                </a>
+                 <!-- Empty placeholder to maintain layout if needed (adjust grid columns in CSS) -->
+                 <a href="#" class="service-item placeholder"></a>
+            </div>
+        </section>
+
+        <!-- Carousel/Info Section (Added more slides) -->
+        <section class="carousel-container">
+             <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <!-- Slide 1: Know More About ABHA (Existing) -->
+                    <div class="carousel-slide info-slide card">
+                         <div class="slide-header">
+                             <!-- Header is just H3 now -->
+                             <h3>Know More About ABHA</h3>
+                         </div>
+                         <div class="slide-content">
+                             <!-- Use actual image path -->
+                             <img src="image2.jpg" alt="ABHA Information" class="slide-image">
+                             <div class="slide-text">
+                                <p>Know how it empowers you to manage your health data securely & access India's digital health ecosystem.</p>
+                                <!-- Using btn-secondary for consistency, or btn-blue if preferred -->
+                                <a href="#" class="btn btn-blue">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Buy Health Insurance (NEW) -->
+                    <div class="carousel-slide info-slide card">
+                         <div class="slide-header">
+                             <i class="fas fa-shield-alt"></i> <!-- Example Icon -->
+                             <h3>Buy Health Insurance</h3>
+                         </div>
+                         <div class="slide-content">
+                              <!-- Use actual image path -->
+                             <img src="image3.jpg" alt="Health Insurance" class="slide-image"> <!-- Placeholder path -->
+                             <div class="slide-text">
+                                <p>Secure your health with ease! Purchase insurance directly from our trusted partners.</p>
+                                <a href="#" class="btn btn-blue">Explore Plans</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Ambulatory Coins (NEW) -->
+                    <div class="carousel-slide info-slide card">
+                         <div class="slide-header">
+                             <i class="fas fa-coins"></i> <!-- Example Icon -->
+                             <h3>Ambulatory Coins</h3>
+                         </div>
+                         <div class="slide-content">
+                              <!-- Use actual image path -->
+                             <img src="image 4.jpg" alt="Ambulatory Coins" class="slide-image"> <!-- Placeholder path -->
+                             <div class="slide-text">
+                                <p>Earn Coins for activities like creating ABHA & referring friends. Redeem for benefits!</p>
+                                <a href="#" class="btn btn-blue">Start Earning</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- End carousel-track -->
+            </div><!-- End carousel-wrapper -->
+            <div class="carousel-nav"></div> <!-- Dots will be added by JS -->
+        </section>
+
+        <!-- Footer / Approval Section -->
+        <footer class="app-footer">
+             <div class="approval-section">
+                 <!-- Use actual image path -->
+                 <img src="image1.jpg" alt="ABHA App Illustration">
+                 <div class="approval-logos">
+                    <span>APPROVED BY</span>
+                     <!-- Use actual image paths -->
+                    <img src="national_health_img.png" class="photo" alt="National Health Authority"> <!-- Placeholder path -->
+                    <img src="ayushman_bharat.avif" alt="Digital Mission"> <!-- Placeholder path -->
+                 </div>
+                 <p class="privacy-info">
+                    Your personal health data is 100% safe and secure.
+                 </p>
+             </div>
+        </footer>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <!-- Using fa-house for solid home -->
+            <i class="fas fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-search"></i>
+             <span>Search</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+             <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script> <!-- Ensure JS file is linked -->
+</body>
+</html>
